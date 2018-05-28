@@ -17,11 +17,11 @@ window.addEventListener('load', function() {
     
   if (typeof web3 !== 'undefined') {
       alert('Unlock Metamask');
-      $("#constat").text("CONNECTED");
+      $('#constat').text('CONNECTED');
       startApp();
   } else {
       alert('Install and Unlock Metamask');
-      $("#constat").text("DISCONNECTED");
+      $('#constat').text('DISCONNECTED');
   }})
 
 function startApp(){
@@ -52,7 +52,7 @@ function AddInit2(){
                 console.log('Send Transaction:   ',error,'',true);
             } else {
                 console.log('Send Transaction:   ',parameterValue,result,result,false);
-                alert("Succesful Transaction");
+                alert('Succesful Transaction');
             }
         });
 }
@@ -61,23 +61,24 @@ function AddInit() {
   var aadhid = $('#Uaadh').val();
   var adVal = isValidNumber(aadhid);
   if (adVal){
-    alert("Valid Aadhar ID");
+    alert('Valid Aadhar ID');
     AddInit2();
   }else{
-    alert("Invalid Aadhar ID");
+    alert('Invalid Aadhar ID');
   }
 }
 
 function aadhar2(){  
        preFunc();
-       parameterValue = (document.getElementById('Uaadr').value)+","+(document.getElementById('Uaadh').value);
-       instance.add_Member.sendTransaction(parameterValue,txnObject,function(error, result)  {
+       param1 = document.getElementById('Uaadr').value;
+  	param2 = document.getElementById('Uaadh').value;
+       instance.add_Member.sendTransaction(param1,param2,txnObject,function(error, result)  {
        console.log('RECVED>>',error,result);   
             if(error){
                 console.log('Send Transaction:   ',error,'',true);
             } else {
                 console.log('Send Transaction:   ',parameterValue,result,result,false);
-                alert("Succesful Transaction");
+                alert('Succesful Transaction');
             }
         });
 }
@@ -86,10 +87,10 @@ function aadhvalidation() {
   var aadhid = $('#Uaadh').val();
   var adVal = isValidNumber(aadhid);
   if (adVal){
-    alert("Valid Aadhar ID");
+    alert('Valid Aadhar ID');
     aadhar2();
   }else{
-    alert("Invalid Aadhar ID");
+    alert('Invalid Aadhar ID');
   }
 }
 
@@ -102,7 +103,7 @@ function PolDep(){
                 console.log('Send Transaction:   ',error,'',true);
             } else {
                 console.log('Send Transaction:   ',parameterValue,result,result,false);
-                alert("Succesful Transaction");
+                alert('Succesful Transaction');
             }
         });
 }
@@ -116,7 +117,7 @@ function LoanReq(){
                 console.log('Send Transaction:   ',error,'',true);
             } else {
                 console.log('Send Transaction:   ',parameterValue,result,result,false);
-                alert("Succesful Transaction");
+                alert('Succesful Transaction');
             }
         });
 }
